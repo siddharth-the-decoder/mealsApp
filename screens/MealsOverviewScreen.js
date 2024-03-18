@@ -17,9 +17,12 @@ function MealsOverViewScreen({ route, navigation }) {
       title: categoryTitle,
     });
   }, [catId, navigation]);
+
   function renderMealItem(itemData) {
     const item = itemData.item;
+
     const mealItemProps = {
+      id: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
       duration: item.duration,
@@ -28,6 +31,7 @@ function MealsOverViewScreen({ route, navigation }) {
     };
     return <MealItem {...mealItemProps} />;
   }
+
   return (
     <View style={styles.container}>
       <FlatList
